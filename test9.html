@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newsletter SignUp Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .checkbox-label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Newsletter SignUp</h2>
+    <form id="newsletterForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" min="1" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" required>
+
+      <label for="species">Pet Bird Species of Interest:</label>
+      <select id="species">
+        <option value="parrot">Parrot</option>
+        <option value="canary">Canary</option>
+        <option value="finch">Finch</option>
+        <option value="budgerigar">Budgerigar</option>
+        <option value="cockatiel">Cockatiel</option>
+        <option value="lovebird">Lovebird</option>
+      </select>
+
+      <label for="otherInterests">Other Interest(s):</label>
+      <textarea id="otherInterests" rows="4"></textarea>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="subscribe" checked>
+        Subscribe to Weekly Newsletter?
+      </label>
+
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const age = document.getElementById("age").value;
+      const address = document.getElementById("address").value;
+      const species = document.getElementById("species").value;
+      const otherInterests = document.getElementById("otherInterests").value;
+      const subscribe = document.getElementById("subscribe").checked;
+
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Age:", age);
+      console.log("Address:", address);
+      console.log("Pet Bird Species of Interest:", species);
+      console.log("Other Interest(s):", otherInterests);
+      console.log("Subscribe to Weekly Newsletter:", subscribe);
+    });
+  </script>
+</body>
+</html>
